@@ -1,13 +1,19 @@
 package top.lizhengxian.multifragment.sample;
 
+import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import top.lizhengxian.multifragments.BaseActivity;
+
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getFragmentManager().beginTransaction()
+                .add(R.id.content,new HomeFragment())
+                .commit();
     }
 }
